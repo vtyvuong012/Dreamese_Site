@@ -188,6 +188,78 @@
             #home h1 { font-size: 2.5rem; }
             nav ul { display: none; }
         }
+        /* ===== FOOTER (PARTNER VERSION) ===== */
+.site-footer{
+    background: #000;
+    border-top: 1px solid #111;
+    padding: 40px 10%;
+    font-size: 13px;
+    color: #444;
+}
+
+.footer-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-left{
+    font-family: "Avo";
+}
+
+.footer-partners{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.partner-label{
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.partner-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.partner-item img{
+    height: 28px;
+    width: auto;
+    filter: grayscale(100%);
+}
+
+.partner-item span{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.partner-item:hover{
+    opacity: 1;
+}
+
+.partner-item:hover img{
+    filter: grayscale(0%);
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    .footer-inner{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
     </style>
 </head>
 
@@ -546,7 +618,35 @@
     </div>
 </section>
 
-<footer>© 2026 Dreamese Studio – Architecture & Interior Design</footer>
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <!-- Bên trái: Bản quyền -->
+        <div class="footer-left">
+            © 2026 Dreamese Studio – Architecture & Interior Design
+        </div>
+
+        <!-- Bên phải: Đối tác -->
+        <div class="footer-partners">
+            <span class="partner-label">In collaboration with</span>
+
+            <div class="partner-item">
+                <img src="MT_Logo.png">
+                <span>MT Construction</span>
+            </div>
+
+            <!-- Nếu có đối tác khác, copy thêm block này -->
+            <!--
+            <div class="partner-item">
+                <img src="partner2.png" alt="Partner Name">
+                <span>Partner Name</span>
+            </div>
+            -->
+
+        </div>
+
+    </div>
+</footer>
 
 <script>
     // Hiệu ứng hiện trang
