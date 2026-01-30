@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quy trình Thiết kế & Thi công trọn gói | Dreamese Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quy trình thiết kế thi công trọn gói tại Dreamese Studio – giải pháp xây nhà trọn gói, đồng bộ kiến trúc và nội thất từ ý tưởng đến bàn giao.">
+
+<style>
+@font-face { font-family:"God"; src:url("fonts/UTM_GodR.ttf"); }
+@font-face { font-family:"Avo"; src:url("fonts/UTM_Avo.ttf"); }
+
+:root{
+    --bg:#0f0f0f;
+    --accent:#b48a5a;
+    --text:#ddd;
+    --muted:#777;
+    --gap: 18px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+    font-family:"Avo",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+}
+
+/* ===== HEADER ===== */
+nav{
+    position:fixed;top:0;width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 8%;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+.logo-link{text-decoration:none;color:inherit;}
+.logo{
+    display:flex;align-items:center;gap:12px;
+    white-space:nowrap;
+}
+.logo img{height:42px;}
+.logo-text { font-family: "God"; font-size: 18px; letter-spacing: 2px; color: white; }
+nav ul{list-style:none;display:flex;gap:28px;}
+nav a{text-decoration:none;color:#fff;font-size:13px;text-transform:uppercase;}
+nav a:hover{color:var(--accent);}
+
+/* ===== SECTION GENERAL ===== */
+section{padding:100px 10%;}
+h1,h2,h3{font-family:"God";}
+h1{font-size:3.2rem; color:#fff; margin-bottom: 40px; letter-spacing: 1px;}
+h2{color:var(--accent);margin-bottom:30px;}
+p{color:#ccc;margin-bottom:18px;}
+
+/* ===== PROCESS INTRO (CĂN TRÁI & GIÃN DÒNG) ===== */
+.process-section {
+    padding: 150px 10% 80px;
+    text-align: left; /* Căn trái toàn bộ */
+}
+
+.intro {
+    max-width: 850px;
+    margin-left: 0; /* Đảm bảo sát lề trái */
+}
+
+.intro p {
+    font-size: 1.1rem;
+    line-height: 2.2; /* Giãn dòng thưa hơn */
+    margin-bottom: 35px; /* Giãn đoạn thưa hơn */
+    color: #bbb;
+}
+
+/* ===== PROCESS FLOW (KHOẢNG CÁCH HẸP) ===== */
+.process-container {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Căn quy trình theo lề trái của text */
+    gap: 0;
+}
+
+.process-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.bubble {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px dotted var(--accent);
+    color: #fff;
+    
+    /* Chỉnh kích thước chữ trong bubble */
+    font-size: 14px; 
+    font-weight: 500;
+    line-height: 1.4;
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+    transition: .4s;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.bubble:hover {
+    transform: translateY(-6px) scale(1.05);
+    background: rgba(180,138,90,.15);
+}
+
+.connector {
+    width: 70px; /* Thu hẹp khoảng cách còn 1 nửa (70px thay vì 140px) */
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.connector path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-dasharray: 2 8;
+}
+
+.process-step:last-child .connector { display: none; }
+
+/* ===== STEPS DESCRIBE ===== */
+.step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 100px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+.step.show { opacity: 1; transform: none; }
+.step h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.8rem; }
+.step.reverse { direction: rtl; }
+.step.reverse * { direction: ltr; }
+
+/* ===== IMAGE CLUSTER ===== */
+.process-images {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+}
+.process-images div {
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: rotate(45deg);
+    background: #111;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: .5s;
+}
+.process-images img {
+    width: 100%; height: 100%; object-fit: cover;
+    transform: rotate(-45deg) scale(1.2);
+}
+.img-main { width: 65%; top: 15%; left: 15%; z-index: 3; }
+.sub-1 { width: 40%; top: -5%; right: 0; z-index: 2; opacity: 0.8; }
+.sub-2 { width: 40%; bottom: -5%; left: 0; z-index: 1; opacity: 0.7; }
+
+/* ===== CONTACT & FOOTER ===== */
+#contact { background: #000; border-top: 1px solid #111; padding: 100px 10%; }
+.contact-info p { font-family: "God"; font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; }
+footer { background: #000; text-align: center; padding: 40px; font-size: 13px; color: #555; }
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+    section { padding: 80px 5%; }
+    .step { grid-template-columns: 1fr; gap: 40px; }
+    .process-flow { flex-direction: column; gap: 30px; align-items: flex-start; }
+    .connector { display: none; }
+    h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="Dreamese.html" class="logo-link">
+        <div class="logo">
+            <img src="Dreamese_Studio.png" alt="Logo">
+            <span class="logo-text">Dreamese Studio</span>
+        </div>
+    </a>
+    <ul>
+        <li><a href="Dreamese.html">Về chúng tôi</a></li>
+        <li><a href="#step1">Quy trình</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+</nav>
+
+<section class="process-section">
+    <h1>Quy trình Thiết kế & Thi công trọn gói</h1>
+
+    <div class="intro">
+        <p>
+            Dịch vụ <strong>Thiết kế và Thi công trọn gói</strong> ra đời từ nhu cầu rất thực tế: 
+            khi gia chủ không chỉ cần một bản vẽ đẹp, mà cần một <em>quá trình đồng hành</em>.
+        </p>
+        <p>
+            Ở Dreamese, chúng tôi xem đây không phải là “xây nhà nhanh gọn”, 
+            mà là cách để kiến trúc sư chịu trách nhiệm trọn vẹn 
+            từ ý tưởng đến không gian sống khi bàn giao.
+        </p>
+    </div>
+
+    <div class="process-container">
+        <div class="process-flow">
+            <div class="process-step">
+                <a href="#step1" class="bubble">Khảo sát<br>hiện trạng</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,50 C40,10 120,10 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step2" class="bubble">Tư vấn<br>& Định hướng</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,30 C40,70 120,70 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step3" class="bubble">Lên ý tưởng<br>thiết kế</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,50 C40,10 120,10 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step4" class="bubble">Khai triển<br>HSKT</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,30 C40,70 120,70 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step5" class="bubble">Khảo sát<br>& Định vị</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,50 C40,10 120,10 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step6" class="bubble">Triển khai<br>thi công</a>
+                <svg class="connector" viewBox="0 0 160 80"><path d="M0,30 C40,70 120,70 160,40" /></svg>
+            </div>
+            <div class="process-step">
+                <a href="#step7" class="bubble">Nghiệm thu<br>& Bàn giao</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section id="step1" class="step">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+
+<div>
+<h3>1. Khảo sát hiện trạng</h3>
+<p>Chúng tôi bắt đầu bằng việc đọc vị khu đất, môi trường và thói quen sống – những điều không có trên bản đồ.</p>
+</div>
+</section>
+
+<section id="step2" class="step reverse">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>2. Tư vấn & định hướng</h3>
+<p>Đây là giai đoạn đối thoại, nơi mong muốn của gia chủ được soi chiếu bằng kinh nghiệm nghề.</p>
+</div>
+</section>
+
+<section id="step3" class="step">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>3. Lên ý tưởng thiết kế</h3>
+<p>Ý tưởng không chỉ là hình ảnh, mà là cách không gian phục vụ đời sống.</p>
+</div>
+</section>
+
+<section id="step4" class="step reverse">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>4. Hồ sơ kỹ thuật thi công</h3>
+<p>Bản vẽ lúc này trở thành ngôn ngữ chính xác giữa kiến trúc sư và đội thi công.</p>
+</div>
+</section>
+
+<section id="step5" class="step">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>5. Định vị & chỉ giới</h3>
+<p>Đảm bảo mọi thứ đúng pháp lý và đúng với tinh thần thiết kế ban đầu.</p>
+</div>
+</section>
+
+<section id="step6" class="step reverse">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>6. Thi công</h3>
+<p>Thiết kế được kiểm soát xuyên suốt để tránh sai lệch trong quá trình triển khai.</p>
+</div>
+</section>
+
+<section id="step7" class="step">
+<div class="process-images">
+    <div class="img-main">
+        <img src="images/step1-main.jpg" alt="">
+    </div>
+    <div class="img-sub sub-1">
+        <img src="images/step1-sub1.jpg" alt="">
+    </div>
+    <div class="img-sub sub-2">
+        <img src="images/step1-sub2.jpg" alt="">
+    </div>
+</div>
+<div>
+<h3>7. Nghiệm thu & bàn giao</h3>
+<p>Ngôi nhà được bàn giao khi nó thực sự sẵn sàng cho một câu chuyện sống mới.</p>
+</div>
+</section>
+
+<section id="contact">
+    <h2>Liên hệ</h2>
+    <div class="contact-info">
+        <p>Email: vtv.arc@gmail.com</p>
+        <p>Hotline: 0943 63 4758</p>
+    </div>
+</section>
+
+<footer>© 2026 Dreamese Studio – Architecture & Interior Design</footer>
+
+<script>
+const steps = document.querySelectorAll('.step');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+}, { threshold: 0.2 });
+
+steps.forEach(step => observer.observe(step));
+</script>
+
+</body>
+</html>
