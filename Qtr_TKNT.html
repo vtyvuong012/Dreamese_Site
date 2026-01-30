@@ -2,261 +2,329 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Quy trình Thiết kế & Thi công trọn gói | Dreamese Studio</title>
+<title>Quy trình Thiết kế & Thi công Trọn gói | Dreamese Studio</title>
+
+<meta name="description" content="Dreamese Studio cung cấp dịch vụ thiết kế thi công trọn gói – giải pháp xây nhà trọn gói, thiết kế kiến trúc và thiết kế nội thất đồng bộ từ ý tưởng đến hoàn thiện.">
+<meta name="keywords" content="thiết kế thi công trọn gói, xây nhà trọn gói, thiết kế kiến trúc, thiết kế nội thất">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quy trình thiết kế thi công trọn gói tại Dreamese Studio – giải pháp xây nhà trọn gói, đồng bộ kiến trúc và nội thất từ ý tưởng đến bàn giao.">
 
-<!-- ===== FONT ===== -->
+<!-- ===== FONT DREAMese ===== -->
 <style>
-@font-face { font-family:"God"; src:url("fonts/UTM_GodR.ttf"); }
-@font-face { font-family:"Avo"; src:url("fonts/UTM_Avo.ttf"); }
-
-:root{
---bg:#0f0f0f;
---accent:#b48a5a;
---text:#ddd;
---muted:#777;
+@font-face {
+    font-family: "God";
+    src: url("fonts/UTM_GodR.ttf");
+}
+@font-face {
+    font-family: "Avo";
+    src: url("fonts/UTM_Avo.ttf");
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== BASE ===== */
 body{
-font-family:"Avo",sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.8;
+    font-family:"Avo",sans-serif;
+    background:#0d0d0d;
+    color:#d0d0d0;
+    line-height:1.9;
+    overflow-x:hidden;
 }
+img{width:100%;display:block;border-radius:8px}
 
-/* ===== HEADER ===== */
+/* ===== HEADER (GIỐNG TRANG CHỦ) ===== */
 nav{
-position:fixed;top:0;width:100%;
-background:rgba(0,0,0,.95);
-display:flex;justify-content:space-between;align-items:center;
-padding:14px 8%;
-z-index:1000;
-border-bottom:1px solid rgba(255,255,255,.08);
+    position:fixed;
+    top:0;width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 8%;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.1);
 }
-.logo-link{text-decoration:none;color:inherit;}
 .logo{
-display:flex;align-items:center;gap:12px;
-white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
-.logo img{height:42px;}
+.logo img{height:42px}
 .logo-text{
-font-family:"God";
-letter-spacing:2px;
-font-size:20px;
-white-space:nowrap;
-color:#fff;
+    font-family:"God";
+    font-size:20px;
+    letter-spacing:2px;
+    color:#fff;
 }
-nav ul{list-style:none;display:flex;gap:28px;}
-nav a{text-decoration:none;color:#fff;font-size:13px;text-transform:uppercase;}
-nav a:hover{color:var(--accent);}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+nav a:hover{color:#b48a5a}
 
-/* ===== SECTION ===== */
-section{padding:120px 10%;}
-h1,h2,h3{font-family:"God";}
-h1{font-size:3rem;color:#fff;}
-h2{color:var(--accent);margin-bottom:30px;}
-p{color:#ccc;margin-bottom:18px;}
+/* ===== SECTION COMMON ===== */
+section{padding:120px 10%}
+h2{
+    font-family:"God";
+    font-size:2.3rem;
+    color:#b48a5a;
+    margin-bottom:50px;
+    position:relative;
+}
+h2::after{
+    content:"";
+    width:60px;height:3px;
+    background:#b48a5a;
+    position:absolute;
+    left:0;bottom:-12px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:flex-end;
+    background:
+        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.9)),
+        url("process/hero.jpg") center/cover;
+}
+.hero h1{
+    font-family:"God";
+    font-size:3.2rem;
+    color:#fff;
+    max-width:820px;
+}
 
 /* ===== INTRO ===== */
-.intro{max-width:900px;}
-.intro p{font-size:1.05rem;}
+.intro p{
+    max-width:900px;
+    margin-bottom:22px;
+    font-size:.95rem;
+}
 
-/* ===== FLOW ===== */
+/* ===== FLOW BUBBLE ===== */
 .flow{
-display:flex;flex-wrap:wrap;gap:16px;
-margin:50px 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
 }
-.flow a{
-text-decoration:none;color:inherit;
-background:rgba(255,255,255,.05);
-padding:14px 22px;
-border-radius:40px;
-border:1px solid rgba(255,255,255,.1);
-transition:.3s;
-font-size:.85rem;
+.flow span{
+    border:1px solid #b48a5a;
+    padding:12px 22px;
+    border-radius:40px;
+    font-size:12px;
+    letter-spacing:1px;
 }
-.flow a:hover{
-background:rgba(180,138,90,.2);
-border-color:var(--accent);
+.flow span.active{
+    background:#b48a5a;
+    color:#000;
+    font-weight:bold;
 }
 
-/* ===== STEP ===== */
+/* ===== STEPS ===== */
+.steps{
+    display:flex;
+    flex-direction:column;
+    gap:100px;
+}
 .step{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-margin-bottom:80px;
-align-items:center;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+    display:flex;
+    gap:60px;
+    align-items:center;
 }
-.step.show{opacity:1;transform:none;}
-.step img{
-width:100%;
-border-radius:12px;
-}
-.step.reverse{direction:rtl;}
-.step.reverse *{direction:ltr;}
-
+.step.reverse{flex-direction:row-reverse}
 .step h3{
-color:var(--accent);
-margin-bottom:15px;
+    font-family:"God";
+    color:#b48a5a;
+    margin-bottom:18px;
+    font-size:1.6rem;
 }
+.step p{font-size:.95rem}
 
 /* ===== CONTACT ===== */
 #contact{
-background:#000;
-border-top:1px solid #111;
+    background:#111;
+    border-top:1px solid #222;
 }
 .contact-info p{
-font-family:"God";
-font-size:1.4rem;
-color:var(--accent);
+    font-family:"God";
+    font-size:1.4rem;
+    color:#b48a5a;
+    margin-bottom:10px;
+}
+.contact-sub{
+    font-size:.95rem;
+    color:#777;
+    margin-top:20px;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (GIỐNG TRANG CHỦ) ===== */
 footer{
-background:#000;
-text-align:center;
-padding:40px 10%;
-font-size:13px;
-color:#555;
+    background:#000;
+    color:#444;
+    padding:50px 10%;
+    text-align:center;
+    font-size:13px;
+    border-top:1px solid #111;
 }
 
-/* MOBILE */
+/* ===== SCROLL ANIMATION ===== */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+.fade.show{opacity:1;transform:none}
+
+/* ===== MOBILE ===== */
 @media(max-width:900px){
-.step{grid-template-columns:1fr;}
-nav ul{display:none;}
-h1{font-size:2.2rem;}
+    .step,.step.reverse{flex-direction:column}
+    nav ul{display:none}
+    .hero h1{font-size:2.4rem}
 }
 </style>
-
-<!-- ===== SERVICE + FAQ SCHEMA ===== -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Service",
-"name":"Thiết kế và Thi công trọn gói",
-"provider":{"@type":"Organization","name":"Dreamese Studio"},
-"serviceType":["Thiết kế thi công trọn gói","Xây nhà trọn gói","Thiết kế kiến trúc","Thiết kế nội thất"]
-}
-</script>
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Thiết kế thi công trọn gói là gì?",
-"acceptedAnswer":{"@type":"Answer","text":"Là hình thức đồng bộ từ thiết kế đến thi công, giúp kiểm soát chất lượng và ngân sách."}},
-{"@type":"Question","name":"Có cần kiến trúc sư khi xây nhà trọn gói?",
-"acceptedAnswer":{"@type":"Answer","text":"Kiến trúc sư giúp định hướng không gian, thẩm mỹ và bảo vệ quyền lợi gia chủ trong suốt quá trình thi công."}}
-]
-}
-</script>
 </head>
 
 <body>
 
 <!-- ===== HEADER ===== -->
 <nav>
-<a href="Dreamese.html" class="logo-link">
-<div class="logo">
-<img src="Dreamese_Studio.png">
-<span class="logo-text">Dreamese Studio</span>
-</div>
-</a>
-<ul>
-<li><a href="Dreamese.html">Về chúng tôi</a></li>
-<li><a href="#contact">Liên hệ</a></li>
-</ul>
+    <div class="logo">
+        <img src="Dreamese_Studio.png">
+        <span class="logo-text">Dreamese Studio</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Về chúng tôi</a></li>
+        <li><a href="index.html#projects">Dự án</a></li>
+        <li><a href="index.html#services">Dịch vụ</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
 </nav>
 
-<!-- ===== CONTENT ===== -->
-<section>
-<h1>Quy trình Thiết kế & Thi công trọn gói</h1>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>Quy trình Thiết kế &<br>Thi công Trọn gói</h1>
+</section>
 
-<div class="intro">
+<!-- ===== INTRO ===== -->
+<section class="intro fade">
+<h2>Vì sao cần Thiết kế & Thi công Trọn gói?</h2>
 <p>
-Dịch vụ <strong>Thiết kế và Thi công trọn gói</strong> ra đời từ nhu cầu rất thực tế:
-khi gia chủ không chỉ cần một bản vẽ đẹp, mà cần một <em>quá trình đồng hành</em>.
+Dịch vụ <strong>thiết kế thi công trọn gói</strong> ra đời từ thực tế hành nghề:
+khi bản vẽ và thi công bị tách rời, công trình rất dễ mất đi tinh thần ban đầu.
 </p>
 <p>
-Ở Dreamese, chúng tôi xem đây không phải là “xây nhà nhanh gọn”,
-mà là cách để kiến trúc sư chịu trách nhiệm trọn vẹn
-từ ý tưởng đến không gian sống khi bàn giao.
+Tại Dreamese, chúng tôi xem <strong>xây nhà trọn gói</strong> không chỉ là hoàn thiện
+một ngôi nhà, mà là hành trình đồng hành, nơi kiến trúc sư chịu trách nhiệm
+từ <strong>thiết kế kiến trúc</strong>, <strong>thiết kế nội thất</strong>
+đến chất lượng không gian sống cuối cùng.
 </p>
-</div>
+</section>
 
+<!-- ===== FLOW ===== -->
+<section class="fade">
+<h2>Quy trình triển khai</h2>
 <div class="flow">
-<a href="#step1">Khảo sát hiện trạng</a>
-<a href="#step2">Tư vấn & định hướng</a>
-<a href="#step3">Lên ý tưởng</a>
-<a href="#step4">Hồ sơ kỹ thuật</a>
-<a href="#step5">Định vị ranh giới</a>
-<a href="#step6">Thi công</a>
-<a href="#step7">Nghiệm thu & bàn giao</a>
+    <span>Khảo sát hiện trạng</span>
+    <span>Tư vấn & định hướng</span>
+    <span>Lên ý tưởng</span>
+    <span>Hồ sơ kỹ thuật</span>
+    <span>Định vị chỉ giới</span>
+    <span>Thi công</span>
+    <span class="active">Bàn giao</span>
 </div>
 </section>
 
 <!-- ===== STEPS ===== -->
-<section id="step1" class="step">
-<img src="images/step1.jpg">
-<div>
-<h3>1. Khảo sát hiện trạng</h3>
-<p>Chúng tôi bắt đầu bằng việc đọc vị khu đất, môi trường và thói quen sống – những điều không có trên bản đồ.</p>
+<section class="steps">
+<div class="step fade">
+    <img src="process/step01.jpg">
+    <div>
+        <h3>1. Khảo sát hiện trạng trước thiết kế</h3>
+        <p>
+        Hiện trạng khu đất là dữ liệu nền tảng. Cao độ, hướng nắng,
+        hàng xóm, pháp lý… tất cả đều ảnh hưởng đến giải pháp thiết kế
+        và thi công sau này.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step2" class="step reverse">
-<img src="images/step2.jpg">
-<div>
-<h3>2. Tư vấn & định hướng</h3>
-<p>Đây là giai đoạn đối thoại, nơi mong muốn của gia chủ được soi chiếu bằng kinh nghiệm nghề.</p>
+<div class="step reverse fade">
+    <img src="process/step02.jpg">
+    <div>
+        <h3>2. Tư vấn & Định hướng thiết kế</h3>
+        <p>
+        Kiến trúc sư đóng vai trò người dẫn đường,
+        giúp gia chủ nhìn rõ nhu cầu thực sự
+        và những giới hạn cần tôn trọng.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step3" class="step">
-<img src="images/step3.jpg">
-<div>
-<h3>3. Lên ý tưởng thiết kế</h3>
-<p>Ý tưởng không chỉ là hình ảnh, mà là cách không gian phục vụ đời sống.</p>
+<div class="step fade">
+    <img src="process/step03.jpg">
+    <div>
+        <h3>3. Trao đổi hình ảnh & lên ý tưởng</h3>
+        <p>
+        Từ câu chuyện sống, phong cách, hình ảnh tham khảo,
+        ý tưởng thiết kế được hình thành,
+        vừa mang dấu ấn cá nhân vừa đảm bảo khả năng thi công.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step4" class="step reverse">
-<img src="images/step4.jpg">
-<div>
-<h3>4. Hồ sơ kỹ thuật thi công</h3>
-<p>Bản vẽ lúc này trở thành ngôn ngữ chính xác giữa kiến trúc sư và đội thi công.</p>
+<div class="step reverse fade">
+    <img src="process/step04.jpg">
+    <div>
+        <h3>4. Xuất bản hồ sơ kỹ thuật thi công</h3>
+        <p>
+        Hồ sơ kỹ thuật là ngôn ngữ chung giữa thiết kế và thi công,
+        giúp kiểm soát chi phí, chất lượng và tiến độ công trình.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step5" class="step">
-<img src="images/step5.jpg">
-<div>
-<h3>5. Định vị & chỉ giới</h3>
-<p>Đảm bảo mọi thứ đúng pháp lý và đúng với tinh thần thiết kế ban đầu.</p>
+<div class="step fade">
+    <img src="process/step05.jpg">
+    <div>
+        <h3>5. Khảo sát & định vị chỉ giới – giọt ranh</h3>
+        <p>
+        Đây là bước đảm bảo công trình đi đúng pháp lý,
+        hạn chế tối đa rủi ro trong quá trình xây dựng.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step6" class="step reverse">
-<img src="images/step6.jpg">
-<div>
-<h3>6. Thi công</h3>
-<p>Thiết kế được kiểm soát xuyên suốt để tránh sai lệch trong quá trình triển khai.</p>
+<div class="step reverse fade">
+    <img src="process/step06.jpg">
+    <div>
+        <h3>6. Tiến hành thi công</h3>
+        <p>
+        Khi thiết kế và thi công nằm trong một dòng chảy,
+        mọi chi tiết được kiểm soát,
+        hạn chế phát sinh và sai lệch.
+        </p>
+    </div>
 </div>
-</section>
 
-<section id="step7" class="step">
-<img src="images/step7.jpg">
-<div>
-<h3>7. Nghiệm thu & bàn giao</h3>
-<p>Ngôi nhà được bàn giao khi nó thực sự sẵn sàng cho một câu chuyện sống mới.</p>
+<div class="step fade">
+    <img src="process/step07.jpg">
+    <div>
+        <h3>7. Nghiệm thu & Bàn giao</h3>
+        <p>
+        Công trình được bàn giao không chỉ là một ngôi nhà,
+        mà là không gian sống đã được cân nhắc kỹ lưỡng
+        cho những chặng đường dài phía trước.
+        </p>
+    </div>
 </div>
 </section>
 
@@ -264,21 +332,24 @@ từ ý tưởng đến không gian sống khi bàn giao.
 <section id="contact">
 <h2>Liên hệ</h2>
 <div class="contact-info">
-<p>Email: vtv.arc@gmail.com</p>
-<p>Hotline: 0943 63 4758</p>
+    <p>Email: vtv.arc@gmail.com</p>
+    <p>Hotline: 0943 63 4758</p>
+    <div class="contact-sub">
+        Dreamese Studio – Đồng hành kiến tạo không gian sống.
+    </div>
 </div>
 </section>
 
-<footer>© 2026 Dreamese Studio – Architecture & Interior Design</footer>
+<footer>
+© 2026 Dreamese Studio – Architecture & Interior Design
+</footer>
 
 <script>
-const steps=document.querySelectorAll('.step');
-window.addEventListener('scroll',()=>{
-steps.forEach(s=>{
-const r=s.getBoundingClientRect().top;
-if(r<window.innerHeight-100)s.classList.add('show');
-});
-});
+const items=document.querySelectorAll('.fade');
+const io=new IntersectionObserver(e=>{
+e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
+},{threshold:.2});
+items.forEach(i=>io.observe(i));
 </script>
 
 </body>
