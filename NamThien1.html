@@ -223,17 +223,46 @@
         /* =====================================================
            FOOTER (CĂN TRÁI + THÔNG TIN LIÊN HỆ)
         ===================================================== */
-        footer {
-            background: #0a0a0a; padding: 40px 8%;
-            text-align: left; position: relative; z-index: 10;
-        }
-        .footer-logo { font-family:
-             "God";
-              font-size: 24px;
-               opacity: 0.7;
-                margin-bottom: 5px;
-             }
-        .footer-contact { color: #b48a5a; font-size: 18px; text-decoration: none; display: block; }
+        footer{
+    background: #0a0a0a;
+    padding: 40px 8%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+        /* LEFT */
+.footer-left{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* RIGHT – COLLAB */
+.footer-collab{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+.footer-collab img{
+    height: 22px;
+    width: auto;
+    opacity: 0.65;
+    filter: grayscale(100%);
+}
+
+.footer-collab strong{
+    font-weight: 500;
+}
     
         /* LIGHTBOX CONTENT */
 .lightbox-content {
@@ -273,6 +302,50 @@
     line-height: 1.6;
     opacity: .85;
 }
+
+
+/* ======================================================
+   COLLABORATION LINE (DÒNG HỢP TÁC)
+====================================================== */
+
+   
+.collaboration-line{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.collab-logo{
+    height: 22px;
+    opacity: 0.75;
+    filter: grayscale(100%);
+}
+
+.collab-name{
+    font-weight: 500;
+}
+
+.hero-collab{
+    margin-top: -6px;
+    margin-bottom: 18px;
+}
+
+.logo-stack{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-collab{
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
     </style>
 </head>
 
@@ -281,10 +354,16 @@
     <nav>
         <div class="logo">
             <a href="Dreamese.html" class="logo-link">
-                <img src="Dreamese_Studio.png" alt="Logo">
-                <span class="logo-text">Dreamese Studio</span>
+        <img src="Dreamese_Studio.png" alt="Logo">
+        <div class="logo-stack">
+            <span class="logo-text">Dreamese Studio</span>
+            <span class="logo-collab">
+                In collaboration with MT Construction
+            </span>
+        </div>
             </a>
         </div>
+
         <ul class="nav-menu">
             <li><a href="Dreamese.html">Trang chủ</a></li>
             <li><a href="#gallery">Album</a></li>
@@ -295,6 +374,13 @@
         <div class="story-bg"></div>
         <div class="story-content">
             <h1>Thu Điếu</h1>
+            
+            <div class="collaboration-line hero-collab">
+                <span class="collab-text">In collaboration with</span>
+                <img src="MT_Logo.png" class="collab-logo">
+                <span class="collab-name">MT Construction</span>
+            </div>
+
             <p class="project-slogan">Nốt nhạc tĩnh của thanh âm</p>
             <div class="project-meta">			    
 			    <span><strong>Loại hình:</strong> Nhà ở gia đình nhiều thế hệ</span>
@@ -464,10 +550,21 @@
 </div>
 
 
+    <!-- ===Collaboration Line=== -->
+
     <footer>
+    <div class="footer-left">
         <div class="footer-logo">© Dreamese Studio – Architecture & Interior Design</div>
-        <a href="mailto:vtv.arc@gmail.com" class="footer-contact">vtv.arc@gmail.com - 09 4363 4758</a>
-    </footer>
+        <a href="mailto:vtv.arc@gmail.com" class="footer-contact">
+            vtv.arc@gmail.com - 09 4363 4758
+        </a>
+    </div>
+
+    <div class="footer-collab">
+        <span>In collaboration with</span>
+        <img src="MT_Logo.png">
+        <strong>MT Construction</strong>
+    </div>
 
     <script>
     window.onload = () => document.body.classList.add('loaded');
