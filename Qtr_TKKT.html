@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quy trình Thiết kế & Thi công Trọn gói | Dreamese Studio</title>
+
+<meta name="description" content="Quy trình thiết kế thi công trọn gói tại Dreamese Studio – giải pháp xây nhà trọn gói, thiết kế kiến trúc và thiết kế nội thất đồng bộ từ ý tưởng đến bàn giao.">
+<meta name="keywords" content="thiết kế thi công trọn gói, xây nhà trọn gói, thiết kế kiến trúc, thiết kế nội thất">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== FONT DREAMese ===== -->
+<style>
+@font-face{
+    font-family:"God";
+    src:url("fonts/UTM_GodR.ttf");
+}
+@font-face{
+    font-family:"Avo";
+    src:url("fonts/UTM_Avo.ttf");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:"Avo",sans-serif;
+    background:#0f0f0f;
+    color:#ddd;
+    line-height:1.7;
+}
+</style>
+
+<!-- ===== SEO SCHEMA ===== -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Service",
+ "name":"Thiết kế và Thi công Trọn gói",
+ "provider":{
+   "@type":"Organization",
+   "name":"Dreamese Studio"
+ },
+ "serviceType":[
+   "Thiết kế thi công trọn gói",
+   "Xây nhà trọn gói",
+   "Thiết kế kiến trúc",
+   "Thiết kế nội thất"
+ ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {
+   "@type":"Question",
+   "name":"Thiết kế thi công trọn gói là gì?",
+   "acceptedAnswer":{
+     "@type":"Answer",
+     "text":"Thiết kế thi công trọn gói là dịch vụ đồng bộ từ thiết kế kiến trúc, nội thất đến thi công hoàn thiện."
+   }
+  },
+  {
+   "@type":"Question",
+   "name":"Xây nhà trọn gói có kiểm soát được chi phí không?",
+   "acceptedAnswer":{
+     "@type":"Answer",
+     "text":"Quy trình trọn gói giúp kiểm soát chi phí, hạn chế phát sinh và đảm bảo chất lượng không gian sống."
+   }
+  }
+ ]
+}
+</script>
+
+<style>
+/* ===== HEADER ===== */
+nav{
+    position:fixed;top:0;width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;justify-content:space-between;
+    align-items:center;
+    padding:14px 8%;
+    z-index:1000;
+}
+.logo-link{
+    text-decoration:none;
+    color:inherit;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    white-space:nowrap;
+}
+.logo img{height:42px}
+.logo-text{
+    font-family:"God";
+    font-size:20px;
+    letter-spacing:2px;
+    color:#fff;
+    white-space:nowrap;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+}
+nav a:hover{color:#b48a5a}
+
+/* ===== HERO ===== */
+.hero{
+    height:80vh;
+    background:
+      linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.85)),
+      url("process/hero.jpg") center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+    padding:0 10% 80px;
+}
+.hero h1{
+    font-family:"God";
+    font-size:3rem;
+    color:#fff;
+}
+
+/* ===== FLOW ===== */
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:60px 10%;
+}
+.flow a{
+    padding:14px 22px;
+    border:1px solid #444;
+    border-radius:30px;
+    color:#ccc;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+.flow a:hover{
+    background:#b48a5a;
+    color:#000;
+    border-color:#b48a5a;
+}
+
+/* ===== STEPS ===== */
+.steps{padding:80px 10%}
+.step{
+    display:flex;
+    gap:50px;
+    margin-bottom:100px;
+    align-items:center;
+}
+.step.reverse{flex-direction:row-reverse}
+.step img{
+    width:45%;
+    border-radius:4px;
+}
+.step h3{
+    font-family:"God";
+    color:#b48a5a;
+    margin-bottom:15px;
+}
+.step p{max-width:500px}
+
+/* ===== ANIMATION ===== */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#000;
+    padding:50px 10%;
+    text-align:center;
+    color:#555;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<nav>
+    <a href="Dreamese.html" class="logo-link">
+        <div class="logo">
+            <img src="Dreamese_Studio.png" alt="Dreamese Studio">
+            <span class="logo-text">Dreamese Studio</span>
+        </div>
+    </a>
+    <ul>
+        <li><a href="Dreamese.html">Trang chủ</a></li>
+        <li><a href="Dreamese.html#services">Dịch vụ</a></li>
+        <li><a href="Dreamese.html#projects">Dự án</a></li>
+        <li><a href="Dreamese.html#contact">Liên hệ</a></li>
+    </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>Quy trình Thiết kế &<br>Thi công Trọn gói</h1>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow fade">
+    <a href="#s1">Khảo sát</a>
+    <a href="#s2">Định hướng</a>
+    <a href="#s3">Ý tưởng</a>
+    <a href="#s4">Hồ sơ</a>
+    <a href="#s5">Định vị</a>
+    <a href="#s6">Thi công</a>
+    <a href="#s7">Bàn giao</a>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="steps">
+<div class="step fade" id="s1">
+    <img src="process/step01.jpg">
+    <div>
+        <h3>1. Khảo sát hiện trạng</h3>
+        <p>Đây là bước nền tảng để hiểu rõ khu đất, bối cảnh và điều kiện pháp lý.</p>
+    </div>
+</div>
+
+<div class="step reverse fade" id="s2">
+    <img src="process/step02.jpg">
+    <div>
+        <h3>2. Tư vấn & định hướng</h3>
+        <p>Giúp gia chủ định hình nhu cầu, ngân sách và phong cách sống.</p>
+    </div>
+</div>
+
+<div class="step fade" id="s3">
+    <img src="process/step03.jpg">
+    <div>
+        <h3>3. Lên ý tưởng thiết kế</h3>
+        <p>Ý tưởng được hình thành từ câu chuyện sống của gia đình.</p>
+    </div>
+</div>
+
+<div class="step reverse fade" id="s4">
+    <img src="process/step04.jpg">
+    <div>
+        <h3>4. Hồ sơ kỹ thuật</h3>
+        <p>Chuyển hóa ý tưởng thành hệ thống bản vẽ thi công chi tiết.</p>
+    </div>
+</div>
+
+<div class="step fade" id="s5">
+    <img src="process/step05.jpg">
+    <div>
+        <h3>5. Định vị & pháp lý</h3>
+        <p>Đảm bảo công trình đúng ranh giới và quy định xây dựng.</p>
+    </div>
+</div>
+
+<div class="step reverse fade" id="s6">
+    <img src="process/step06.jpg">
+    <div>
+        <h3>6. Thi công</h3>
+        <p>Thiết kế và thi công song hành để đảm bảo độ chính xác.</p>
+    </div>
+</div>
+
+<div class="step fade" id="s7">
+    <img src="process/step07.jpg">
+    <div>
+        <h3>7. Nghiệm thu & bàn giao</h3>
+        <p>Bàn giao không gian sống hoàn chỉnh, đúng tinh thần ban đầu.</p>
+    </div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    © Dreamese Studio – Architecture & Interior Design<br>
+    Thiết kế kiến trúc · Thiết kế nội thất · Thi công trọn gói
+</footer>
+
+<script>
+const items=document.querySelectorAll('.fade');
+const io=new IntersectionObserver(e=>{
+ e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
+},{threshold:.2});
+items.forEach(i=>io.observe(i));
+</script>
+
+</body>
+</html>

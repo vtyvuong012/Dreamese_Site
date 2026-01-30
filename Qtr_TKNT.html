@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quy trình Thiết kế & Thi công trọn gói | Dreamese Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quy trình thiết kế thi công trọn gói tại Dreamese Studio – giải pháp xây nhà trọn gói, đồng bộ kiến trúc và nội thất từ ý tưởng đến bàn giao.">
+
+<!-- ===== FONT ===== -->
+<style>
+@font-face { font-family:"God"; src:url("fonts/UTM_GodR.ttf"); }
+@font-face { font-family:"Avo"; src:url("fonts/UTM_Avo.ttf"); }
+
+:root{
+--bg:#0f0f0f;
+--accent:#b48a5a;
+--text:#ddd;
+--muted:#777;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+font-family:"Avo",sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.8;
+}
+
+/* ===== HEADER ===== */
+nav{
+position:fixed;top:0;width:100%;
+background:rgba(0,0,0,.95);
+display:flex;justify-content:space-between;align-items:center;
+padding:14px 8%;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+.logo-link{text-decoration:none;color:inherit;}
+.logo{
+display:flex;align-items:center;gap:12px;
+white-space:nowrap;
+}
+.logo img{height:42px;}
+.logo-text{
+font-family:"God";
+letter-spacing:2px;
+font-size:20px;
+white-space:nowrap;
+color:#fff;
+}
+nav ul{list-style:none;display:flex;gap:28px;}
+nav a{text-decoration:none;color:#fff;font-size:13px;text-transform:uppercase;}
+nav a:hover{color:var(--accent);}
+
+/* ===== SECTION ===== */
+section{padding:120px 10%;}
+h1,h2,h3{font-family:"God";}
+h1{font-size:3rem;color:#fff;}
+h2{color:var(--accent);margin-bottom:30px;}
+p{color:#ccc;margin-bottom:18px;}
+
+/* ===== INTRO ===== */
+.intro{max-width:900px;}
+.intro p{font-size:1.05rem;}
+
+/* ===== FLOW ===== */
+.flow{
+display:flex;flex-wrap:wrap;gap:16px;
+margin:50px 0;
+}
+.flow a{
+text-decoration:none;color:inherit;
+background:rgba(255,255,255,.05);
+padding:14px 22px;
+border-radius:40px;
+border:1px solid rgba(255,255,255,.1);
+transition:.3s;
+font-size:.85rem;
+}
+.flow a:hover{
+background:rgba(180,138,90,.2);
+border-color:var(--accent);
+}
+
+/* ===== STEP ===== */
+.step{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-bottom:80px;
+align-items:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.step.show{opacity:1;transform:none;}
+.step img{
+width:100%;
+border-radius:12px;
+}
+.step.reverse{direction:rtl;}
+.step.reverse *{direction:ltr;}
+
+.step h3{
+color:var(--accent);
+margin-bottom:15px;
+}
+
+/* ===== CONTACT ===== */
+#contact{
+background:#000;
+border-top:1px solid #111;
+}
+.contact-info p{
+font-family:"God";
+font-size:1.4rem;
+color:var(--accent);
+}
+
+/* ===== FOOTER ===== */
+footer{
+background:#000;
+text-align:center;
+padding:40px 10%;
+font-size:13px;
+color:#555;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.step{grid-template-columns:1fr;}
+nav ul{display:none;}
+h1{font-size:2.2rem;}
+}
+</style>
+
+<!-- ===== SERVICE + FAQ SCHEMA ===== -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Service",
+"name":"Thiết kế và Thi công trọn gói",
+"provider":{"@type":"Organization","name":"Dreamese Studio"},
+"serviceType":["Thiết kế thi công trọn gói","Xây nhà trọn gói","Thiết kế kiến trúc","Thiết kế nội thất"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Thiết kế thi công trọn gói là gì?",
+"acceptedAnswer":{"@type":"Answer","text":"Là hình thức đồng bộ từ thiết kế đến thi công, giúp kiểm soát chất lượng và ngân sách."}},
+{"@type":"Question","name":"Có cần kiến trúc sư khi xây nhà trọn gói?",
+"acceptedAnswer":{"@type":"Answer","text":"Kiến trúc sư giúp định hướng không gian, thẩm mỹ và bảo vệ quyền lợi gia chủ trong suốt quá trình thi công."}}
+]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<nav>
+<a href="Dreamese.html" class="logo-link">
+<div class="logo">
+<img src="Dreamese_Studio.png">
+<span class="logo-text">Dreamese Studio</span>
+</div>
+</a>
+<ul>
+<li><a href="Dreamese.html">Về chúng tôi</a></li>
+<li><a href="#contact">Liên hệ</a></li>
+</ul>
+</nav>
+
+<!-- ===== CONTENT ===== -->
+<section>
+<h1>Quy trình Thiết kế & Thi công trọn gói</h1>
+
+<div class="intro">
+<p>
+Dịch vụ <strong>Thiết kế và Thi công trọn gói</strong> ra đời từ nhu cầu rất thực tế:
+khi gia chủ không chỉ cần một bản vẽ đẹp, mà cần một <em>quá trình đồng hành</em>.
+</p>
+<p>
+Ở Dreamese, chúng tôi xem đây không phải là “xây nhà nhanh gọn”,
+mà là cách để kiến trúc sư chịu trách nhiệm trọn vẹn
+từ ý tưởng đến không gian sống khi bàn giao.
+</p>
+</div>
+
+<div class="flow">
+<a href="#step1">Khảo sát hiện trạng</a>
+<a href="#step2">Tư vấn & định hướng</a>
+<a href="#step3">Lên ý tưởng</a>
+<a href="#step4">Hồ sơ kỹ thuật</a>
+<a href="#step5">Định vị ranh giới</a>
+<a href="#step6">Thi công</a>
+<a href="#step7">Nghiệm thu & bàn giao</a>
+</div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section id="step1" class="step">
+<img src="images/step1.jpg">
+<div>
+<h3>1. Khảo sát hiện trạng</h3>
+<p>Chúng tôi bắt đầu bằng việc đọc vị khu đất, môi trường và thói quen sống – những điều không có trên bản đồ.</p>
+</div>
+</section>
+
+<section id="step2" class="step reverse">
+<img src="images/step2.jpg">
+<div>
+<h3>2. Tư vấn & định hướng</h3>
+<p>Đây là giai đoạn đối thoại, nơi mong muốn của gia chủ được soi chiếu bằng kinh nghiệm nghề.</p>
+</div>
+</section>
+
+<section id="step3" class="step">
+<img src="images/step3.jpg">
+<div>
+<h3>3. Lên ý tưởng thiết kế</h3>
+<p>Ý tưởng không chỉ là hình ảnh, mà là cách không gian phục vụ đời sống.</p>
+</div>
+</section>
+
+<section id="step4" class="step reverse">
+<img src="images/step4.jpg">
+<div>
+<h3>4. Hồ sơ kỹ thuật thi công</h3>
+<p>Bản vẽ lúc này trở thành ngôn ngữ chính xác giữa kiến trúc sư và đội thi công.</p>
+</div>
+</section>
+
+<section id="step5" class="step">
+<img src="images/step5.jpg">
+<div>
+<h3>5. Định vị & chỉ giới</h3>
+<p>Đảm bảo mọi thứ đúng pháp lý và đúng với tinh thần thiết kế ban đầu.</p>
+</div>
+</section>
+
+<section id="step6" class="step reverse">
+<img src="images/step6.jpg">
+<div>
+<h3>6. Thi công</h3>
+<p>Thiết kế được kiểm soát xuyên suốt để tránh sai lệch trong quá trình triển khai.</p>
+</div>
+</section>
+
+<section id="step7" class="step">
+<img src="images/step7.jpg">
+<div>
+<h3>7. Nghiệm thu & bàn giao</h3>
+<p>Ngôi nhà được bàn giao khi nó thực sự sẵn sàng cho một câu chuyện sống mới.</p>
+</div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+<h2>Liên hệ</h2>
+<div class="contact-info">
+<p>Email: vtv.arc@gmail.com</p>
+<p>Hotline: 0943 63 4758</p>
+</div>
+</section>
+
+<footer>© 2026 Dreamese Studio – Architecture & Interior Design</footer>
+
+<script>
+const steps=document.querySelectorAll('.step');
+window.addEventListener('scroll',()=>{
+steps.forEach(s=>{
+const r=s.getBoundingClientRect().top;
+if(r<window.innerHeight-100)s.classList.add('show');
+});
+});
+</script>
+
+</body>
+</html>
