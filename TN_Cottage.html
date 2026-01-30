@@ -223,17 +223,65 @@
         /* =====================================================
            FOOTER (CĂN TRÁI + THÔNG TIN LIÊN HỆ)
         ===================================================== */
-        footer {
-            background: #0a0a0a; padding: 40px 8%;
-            text-align: left; position: relative; z-index: 10;
-        }
-        .footer-logo { font-family:
-             "God";
-              font-size: 24px;
-               opacity: 0.7;
-                margin-bottom: 5px;
-             }
-        .footer-contact { color: #b48a5a; font-size: 18px; text-decoration: none; display: block; }
+        footer{
+    background: #0a0a0a;
+    padding: 40px 8%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+        /* LEFT */
+.footer-left{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* RIGHT – COLLAB */
+.footer-collab{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+.footer-collab img{
+    height: 22px;
+    width: auto;
+    opacity: 0.65;
+    filter: grayscale(100%);
+}
+
+.footer-collab strong{
+    font-weight: 500;
+}
+        /* FOOTER CONTACT */
+.footer-contact{
+    color: rgba(255, 210, 144, 0.85);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-contact:hover{
+    color: #b48a5a;      /* cùng tone thương hiệu */
+    text-decoration: none;
+}
+
+.footer-contact:visited{
+    color: rgba(255,255,255,0.85);
+}
+
+.footer-contact:active{
+    color: #b48a5a;
+}
     
         /* LIGHTBOX CONTENT */
 .lightbox-content {
@@ -273,6 +321,90 @@
     line-height: 1.6;
     opacity: .85;
 }
+
+    
+        /* LIGHTBOX CONTENT */
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+}
+
+/* ẢNH KHÔNG VỠ */
+#lightboxImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* CAPTION */
+.lb-caption {
+    position: absolute;
+    right: 30px;
+    bottom: 120px;
+    max-width: 280px;
+    background: rgba(0,0,0,.55);
+    padding: 16px 18px;
+    border-left: 3px solid #b48a5a;
+    backdrop-filter: blur(6px);
+}
+
+.lb-caption h4 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: #b48a5a;
+}
+
+.lb-caption p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: .85;
+}
+
+
+/* ======================================================
+   COLLABORATION LINE (DÒNG HỢP TÁC)
+====================================================== */
+
+   
+.collaboration-line{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.collab-logo{
+    height: 22px;
+    opacity: 0.75;
+    filter: grayscale(100%);
+}
+
+.collab-name{
+    font-weight: 500;
+}
+
+.hero-collab{
+    margin-top: -6px;
+    margin-bottom: 18px;
+}
+
+.logo-stack{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-collab{
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
     </style>
 </head>
 
@@ -280,10 +412,16 @@
     <nav>
         <div class="logo">
             <a href="Dreamese.html" class="logo-link">
-                <img src="Dreamese_Studio.png" alt="Logo">
-                <span class="logo-text">Dreamese Studio</span>
+        <img src="Dreamese_Studio.png" alt="Logo">
+        <div class="logo-stack">
+            <span class="logo-text">Dreamese Studio</span>
+            <span class="logo-collab">
+                In collaboration with MT Construction
+            </span>
+        </div>
             </a>
         </div>
+
         <ul class="nav-menu">
             <li><a href="Dreamese.html">Trang chủ</a></li>
             <li><a href="#gallery">Album</a></li>
@@ -294,6 +432,13 @@
         <div class="story-bg"></div>
         <div class="story-content">
             <h1>Heal Hill</h1>
+            
+            <div class="collaboration-line hero-collab">
+                <span class="collab-text">In collaboration with</span>
+                <img src="MT_Logo.png" class="collab-logo">
+                <span class="collab-name">MT Construction</span>
+            </div>
+
             <p class="project-slogan">Góc thiền</p>
             <div class="project-meta">			    
 			    <span><strong>Loại hình:</strong>Bungalow</span>
@@ -395,10 +540,21 @@
 </div>
 
 
+    <!-- ===Collaboration Line=== -->
+
     <footer>
+    <div class="footer-left">
         <div class="footer-logo">© Dreamese Studio – Architecture & Interior Design</div>
-        <a href="mailto:vtv.arc@gmail.com" class="footer-contact">vtv.arc@gmail.com - 09 4363 4758</a>
-    </footer>
+        <a href="mailto:vtv.arc@gmail.com" class="footer-contact">
+            vtv.arc@gmail.com - 09 4363 4758
+        </a>
+    </div>
+
+    <div class="footer-collab">
+        <span>In collaboration with</span>
+        <img src="MT_Logo.png">
+        <strong>MT Construction</strong>
+    </div>
 
     <script>
     window.onload = () => document.body.classList.add('loaded');
